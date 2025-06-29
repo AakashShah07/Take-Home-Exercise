@@ -1,7 +1,7 @@
 // src/app.module.ts
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { BooksModule } from '../books/books.module'; // Import the BooksModule
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -14,6 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true, // for dev only
     }),
+    BooksModule, // Register the BooksModule
   ],
 })
 export class AppModule {}
